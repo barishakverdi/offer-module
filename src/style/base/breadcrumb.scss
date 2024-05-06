@@ -1,0 +1,17 @@
+.breadcrumb-section {
+    @apply
+    w-full h-[300px]
+    overflow-hidden;
+
+    img {
+        @apply
+        w-full h-full object-cover;
+    }
+}
+
+body.not-index {
+    #header ~ .breadcrumb-section {
+        @apply
+        mt-[-90px]
+    }
+}

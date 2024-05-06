@@ -1,0 +1,461 @@
+/* Tailwind */
+@import "style/config/all.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Tailwind */
+#header {
+  @apply w-full relative z-50 h-[90px] top-0
+    transition-all ease-in-out duration-300;
+}
+#header .header-body {
+  @apply h-full
+        relative;
+}
+#header .header-body .header-container {
+  @apply container mx-auto px-5
+            h-full
+            flex;
+}
+#header .header-body .header-container .header-row {
+  @apply flex flex-grow-1 justify-between
+                h-full;
+}
+#header .header-body .header-container .header-row .header-column {
+  @apply flex-grow-1
+                    h-full;
+}
+#header .header-body .header-container .header-row .header-column .header-logo {
+  @apply flex items-center
+                        relative
+                        h-full;
+}
+#header .header-body .header-container .header-row .header-column .header-logo a {
+  @apply block w-full h-max;
+}
+#header .header-body .header-container .header-row .header-column .header-logo img {
+  @apply w-[196px]  h-auto
+                            transition-all ease-in-out duration-300;
+}
+#header .header-body .header-container .header-row .header-column .header-logo img:nth-child(2) {
+  @apply w-0 hidden;
+}
+#header .header-body .header-container .header-row .header-column .header-nav {
+  @apply h-full;
+}
+#header .header-body .header-container .header-row .header-column .features {
+  @apply w-full h-full
+                        flex items-center justify-end;
+}
+#header .header-body .mover {
+  @apply w-full
+            pointer-events-none
+            absolute left-0 top-0 -z-1
+            transition-all ease-in-out duration-700;
+}
+#header .menu-btn {
+  @apply hidden lg:flex
+        flex-col items-end gap-[4px]
+        cursor-pointer
+        w-max;
+}
+#header .menu-btn span {
+  @apply block
+            w-[15px] h-[1px]
+            bg-white;
+}
+#header .menu-btn span:nth-child(2) {
+  @apply w-[11px];
+}
+
+html.sticky-active #header {
+  @apply fixed h-[80px]
+        transition-all ease-in-out duration-300;
+}
+html.sticky-active #header .header-body {
+  @apply transition-all ease-in-out duration-300
+            bg-white;
+}
+html.sticky-active #header .header-body .header-container .header-row .header-column .header-logo img {
+  @apply hidden transition-all ease-in-out duration-300;
+}
+html.sticky-active #header .header-body .header-container .header-row .header-column .header-logo img:nth-child(2) {
+  @apply block;
+}
+html.sticky-active #header .header-body .mover {
+  @apply bg-white;
+}
+html.sticky-active #header .header-body .menu-btn span {
+  @apply bg-dark;
+}
+
+body:after {
+  @apply content-[""]
+        absolute top-0 left-0
+        w-full h-0
+        bg-white/[.2] backdrop-blur-[20px]
+        pointer-events-none
+        transition-all ease-in-out duration-700;
+}
+body.dropdown-active:after {
+  @apply z-40;
+}
+
+.header-nav {
+  @apply flex lg:hidden justify-center items-center
+    w-full;
+}
+.header-nav nav {
+  @apply w-max h-full z-2;
+}
+.header-nav nav > ul {
+  @apply flex
+            w-full h-full;
+}
+.header-nav nav > ul > .menu-item {
+  @apply h-full
+                relative
+                transition-transform ease-in-out duration-700;
+}
+.header-nav nav > ul > .menu-item > a {
+  @apply inline-flex items-center
+                    h-full px-[15px]
+                    text-white
+                    transition-all ease-in-out duration-700;
+}
+.header-nav nav > ul > .menu-item .sub-menu {
+  @apply w-[190px]
+                    absolute
+                    opacity-0
+                    px-[15px]
+                    flex flex-col
+                    pointer-events-none
+                    transition-all ease-in-out duration-700;
+}
+.header-nav nav > ul > .menu-item .sub-menu li a {
+  @apply inline-flex items-center
+                            py-[15px];
+}
+.header-nav nav > ul > .menu-item:hover > .sub-menu {
+  @apply h-max
+                        opacity-100
+                        pointer-events-auto
+                        transition-all ease-in-out duration-700;
+}
+
+html.sticky-active .header-nav nav > ul > li > a {
+  @apply text-black
+                        transition-all ease-in-out duration-300;
+}
+
+body.dropdown-active .header-nav nav > ul > li > a {
+  @apply text-black
+                        transition-all ease-in-out duration-300;
+}
+
+.breadcrumb-section {
+  @apply w-full h-[300px]
+    overflow-hidden;
+}
+.breadcrumb-section img {
+  @apply w-full h-full object-cover;
+}
+
+body.not-index #header ~ .breadcrumb-section {
+  @apply mt-[-90px];
+}
+
+.btn {
+  @apply inline-block;
+}
+
+.primary-btn {
+  @apply bg-dark
+    py-[15px] px-[25px]
+    text-white text-[16px] leading-[16px] tracking-[-0.03em]
+    transition-all duration-300;
+}
+.primary-btn:hover {
+  @apply bg-white
+        text-primary;
+}
+
+form {
+  @apply flex flex-col gap-[24px];
+}
+form .form-group {
+  @apply flex flex-col gap-[12px];
+}
+form .form-group * {
+  @apply transition-all ease-in-out duration-300;
+}
+form .form-group label {
+  @apply text-[14px] leading-[16px] font-bold;
+}
+form .form-group select, form .form-group input {
+  @apply w-full h-[50px] px-[8px] py-[16px]
+            bg-white border border-light text-black;
+}
+form .form-group select:focus, form .form-group input:focus {
+  @apply outline-0
+                border-primary;
+}
+form .form-group select::placeholder, form .form-group input::placeholder {
+  @apply text-black/[.5];
+}
+form .form-group select.error, form .form-group input.error {
+  @apply border-red-600;
+}
+form .form-group textarea {
+  @apply w-full px-[8px] py-[16px]
+            bg-white border border-light text-black;
+}
+form .form-group textarea:focus {
+  @apply outline-0
+                border-primary;
+}
+form .form-group textarea::placeholder {
+  @apply text-black/[.5];
+}
+form .form-group textarea.error {
+  @apply border-red-600;
+}
+form .form-group input[type=checkbox] {
+  @apply w-[16px] h-[16px];
+}
+form .form-group small {
+  @apply order-3
+            w-full
+            text-red-600;
+}
+form .form-group.checkbox {
+  @apply flex flex-row items-center flex-wrap gap-[8px];
+}
+form .form-group.checkbox p {
+  @apply inline-block;
+}
+form .form-group.checkbox p a {
+  @apply font-bold;
+}
+form .form-group.checkbox p a:hover {
+  @apply text-primary;
+}
+form button {
+  @apply bg-primary text-white h-[50px] !important;
+}
+
+.modal-container {
+  @apply fixed w-screen h-screen
+    top-0 left-0 z-50 translate-y-0
+    transition-all ease-in-out duration-300;
+}
+.modal-container .modal {
+  @apply w-full h-full py-[80px]
+        bg-black/[.80] backdrop-blur-[20px]
+        overflow-hidden
+        flex items-center justify-center
+        absolute top-0 left-0
+        transition-all ease-in-out duration-300;
+}
+.modal-container .modal .close-button {
+  @apply absolute top-[30px] right-[18px] p-[15px_21px] max-w-[55px] max-h-[55px] cursor-pointer;
+}
+.modal-container .modal .close-button i {
+  @apply text-[20px] text-white;
+}
+.modal-container .modal .modal-body {
+  @apply max-w-[960px] max-h-[700px] w-full h-max
+            mx-auto px-5 py-10
+            rounded-[8px]
+            bg-white;
+}
+.modal-container .modal .modal-body .modal-content {
+  @apply w-full h-full;
+}
+.modal-container .modal .modal-body .modal-content img {
+  @apply w-full;
+}
+@media (max-width: 960px) {
+  .modal-container .modal {
+    @apply px-5;
+  }
+}
+.modal-container .modal.closed {
+  @apply hidden
+            pointer-events-none
+            translate-y-[100%];
+}
+.modal-container .modal.opened {
+  @apply flex
+            pointer-events-auto
+            translate-y-[0];
+}
+.modal-container.closed {
+  @apply pointer-events-none
+        transition-all ease-in-out duration-300
+        top-[-100%];
+}
+
+.custom-dropdown {
+  @apply cursor-pointer relative;
+}
+.custom-dropdown .placeholder {
+  @apply flex items-center justify-between
+        p-[16px]  bg-white
+        border border-[#738FB2] rounded-[8px];
+}
+.custom-dropdown .placeholder span {
+  @apply text-[15px] text-text pointer-events-none;
+}
+.custom-dropdown .placeholder i {
+  @apply text-[20px] text-[#57A0C6] transition-all ease-in-out duration-300 pointer-events-none;
+}
+.custom-dropdown .options {
+  @apply absolute top-[65px] left-0 z-10
+        w-full bg-white
+        border border-[#738FB2] rounded-[8px] overflow-hidden
+        flex flex-col
+        transition-all ease-in-out duration-300
+        opacity-0 pointer-events-none;
+}
+.custom-dropdown .options.options-open {
+  @apply opacity-100 pointer-events-auto;
+}
+.custom-dropdown .options .option {
+  @apply p-[16px] transition-all ease-in-out duration-300;
+}
+.custom-dropdown .options .option span {
+  @apply pointer-events-none;
+}
+.custom-dropdown .options .option:hover {
+  @apply bg-light;
+}
+.custom-dropdown.very-first {
+  @apply z-50;
+}
+.custom-dropdown input, .custom-dropdown ~ input {
+  @apply opacity-0 pointer-events-none invisible h-0 overflow-hidden;
+}
+
+.dropdown-outside {
+  @apply fixed left-0 top-0 z-10 w-full h-full bg-dark/[.05] backdrop-blur-[7px] transition-all duration-300;
+}
+
+#index-page .content-container {
+  @apply max-w-[1440px] w-full mx-auto px-5;
+}
+
+.sidenav {
+  @apply hidden lg:block
+    fixed right-0 top-0
+    translate-x-[280px]
+    w-[280px] h-screen p-[30px]
+    bg-white
+    border border-transparent
+    transition-all ease-in-out duration-700;
+}
+.sidenav .sidenav-wrapper .close-button {
+  @apply flex items-center justify-center
+            w-[30px] h-[30px]
+            float-right
+            cursor-pointer
+            relative;
+}
+.sidenav .sidenav-wrapper .close-button span {
+  @apply absolute
+                w-[17px] h-[2px]
+                rounded-[6px]
+                block bg-dark;
+}
+.sidenav .sidenav-wrapper .close-button span:nth-child(1) {
+  @apply rotate-45;
+}
+.sidenav .sidenav-wrapper .close-button span:nth-child(2) {
+  @apply -rotate-45;
+}
+.sidenav .sidenav-wrapper nav {
+  @apply w-full;
+}
+.sidenav .sidenav-wrapper nav > ul > .menu-item {
+  @apply block;
+}
+.sidenav .sidenav-wrapper nav > ul > .menu-item > a {
+  @apply inline-block
+                        text-[16px] text-dark
+                        py-[15px];
+}
+.sidenav .sidenav-wrapper nav > ul > .menu-item > .sub-menu {
+  @apply opacity-0
+                        h-0
+                            pointer-events-none
+                        pl-[10px]
+                        transition-all ease-in-out duration-300;
+}
+.sidenav .sidenav-wrapper nav > ul > .menu-item > .sub-menu.sub-menu-open {
+  @apply opacity-100
+                            h-full
+                            pointer-events-auto
+                            transition-all ease-in-out duration-300;
+}
+.sidenav .sidenav-wrapper nav > ul > .menu-item > .sub-menu .menu-item {
+  @apply block;
+}
+.sidenav .sidenav-wrapper nav > ul > .menu-item > .sub-menu .menu-item a {
+  @apply inline-block
+                                text-[16px] text-dark
+                                py-[15px];
+}
+.sidenav.open {
+  @apply border-dark/[.1]
+        translate-x-0;
+}
+.sidenav.open ~ * {
+  @apply translate-x-[-280px];
+}
+
+#contact-page {
+  @apply pt-[60px];
+}
+#contact-page .contact {
+  @apply py-[50px]
+        w-full max-w-[1320px] mx-auto px-5;
+}
+
+body {
+  @apply relative overflow-x-hidden;
+}
+body:after, body:before {
+  @apply transition-all ease-in-out duration-700;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.eot");
+  src: url("/fonts/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Inter-Regular.woff2") format("woff2"), url("/fonts/Inter-Regular.woff") format("woff"), url("/fonts/Inter-Regular.ttf") format("truetype"), url("/fonts/Inter-Regular.svg#Inter-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Light.eot");
+  src: url("/fonts/Inter-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Inter-Light.woff2") format("woff2"), url("/fonts/Inter-Light.woff") format("woff"), url("/fonts/Inter-Light.ttf") format("truetype"), url("/fonts/Inter-Light.svg#Inter-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.eot");
+  src: url("/fonts/Inter-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Inter-Bold.woff2") format("woff2"), url("/fonts/Inter-Bold.woff") format("woff"), url("/fonts/Inter-Bold.ttf") format("truetype"), url("/fonts/Inter-Bold.svg#Inter-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  @apply font-["Inter",sans-serif]
+  font-normal
+  text-[16px];
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - git pull origin main
+    - npm install
+    - npm run build
+    - export DEPLOYPATH=/home/barishak/front.barishakverdi.com/
+    - /bin/cp -R dist/* $DEPLOYPATH

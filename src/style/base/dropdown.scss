@@ -1,0 +1,59 @@
+.custom-dropdown {
+    @apply cursor-pointer relative;
+
+    .placeholder {
+        @apply
+        flex items-center justify-between
+        p-[16px]  bg-white
+        border border-[#738FB2] rounded-[8px];
+
+        span {
+            @apply text-[15px] text-text pointer-events-none;
+        }
+        i {
+            @apply
+            text-[20px] text-[#57A0C6] transition-all ease-in-out duration-300 pointer-events-none;
+        }
+    }
+
+    .options {
+        @apply
+        absolute top-[65px] left-0 z-10
+        w-full bg-white
+        border border-[#738FB2] rounded-[8px] overflow-hidden
+        flex flex-col
+        transition-all ease-in-out duration-300
+        opacity-0 pointer-events-none;
+
+        &.options-open {
+            @apply opacity-100 pointer-events-auto;
+        }
+
+        .option {
+            @apply
+            p-[16px] transition-all ease-in-out duration-300;
+
+            span {
+                @apply pointer-events-none;
+            }
+
+            &:hover {
+                @apply
+                bg-light;
+            }
+        }
+    }
+
+    &.very-first {
+        @apply z-50;
+    }
+
+    input, ~ input {
+        @apply opacity-0 pointer-events-none invisible h-0 overflow-hidden;
+    }
+}
+
+.dropdown-outside {
+    @apply
+    fixed left-0 top-0 z-10 w-full h-full bg-dark/[.05] backdrop-blur-[7px] transition-all duration-300;
+}

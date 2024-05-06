@@ -1,0 +1,18 @@
+.btn {
+    @apply
+    inline-block;
+}
+
+.primary-btn {
+    @apply
+    bg-dark
+    py-[15px] px-[25px]
+    text-white text-[16px] leading-[16px] tracking-[-0.03em]
+    transition-all duration-300;
+
+    &:hover {
+        @apply
+        bg-white
+        text-primary;
+    }
+}

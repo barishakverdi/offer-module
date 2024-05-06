@@ -1,0 +1,97 @@
+form {
+    @apply
+    flex flex-col gap-[24px];
+
+    .form-group {
+        @apply
+        flex flex-col gap-[12px];
+
+        * {
+            @apply
+            transition-all ease-in-out duration-300;
+        }
+
+        label {
+            @apply
+            text-[14px] leading-[16px] font-bold;
+        }
+
+        select, input {
+            @apply
+            w-full h-[50px] px-[8px] py-[16px]
+            bg-white border border-light text-black;
+
+            &:focus {
+                @apply
+                outline-0
+                border-primary;
+            }
+
+            &::placeholder {
+                @apply
+                text-black/[.5];
+            }
+
+            &.error {
+                @apply
+                border-red-600;
+            }
+        }
+
+        textarea {
+            @apply
+            w-full px-[8px] py-[16px]
+            bg-white border border-light text-black;
+
+            &:focus {
+                @apply
+                outline-0
+                border-primary;
+            }
+
+            &::placeholder {
+                @apply
+                text-black/[.5];
+            }
+
+            &.error {
+                @apply
+                border-red-600;
+            }
+        }
+
+        input[type="checkbox"] {
+            @apply
+            w-[16px] h-[16px];
+        }
+
+        small {
+            @apply
+            order-3
+            w-full
+            text-red-600;
+        }
+
+        &.checkbox {
+            @apply
+            flex flex-row items-center flex-wrap gap-[8px];
+
+            p {
+                @apply inline-block;
+
+                a {
+                    @apply font-bold;
+
+                    &:hover {
+                        @apply text-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    button {
+        @apply
+        bg-primary text-white h-[50px] #{!important};
+    }
+}

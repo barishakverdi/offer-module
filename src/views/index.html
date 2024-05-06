@@ -1,0 +1,189 @@
+{{#> layout }}
+
+    {{> partials/header }}
+    <img src="https://placehold.co/1920x600/000000/FFF.jpg" alt="Banner Image"
+         class="w-full h-auto mt-[-90px]" width="1920" height="600" loading="lazy">
+    <div class="content-container max-w-[1320px] mx-auto px-5 mt-[120px]">
+
+        <div class="components mb-[50px]">
+            <h2 class="text-[32px] text-dark mb-[15px]">Components and partials</h2>
+
+            <p>You can create different page layouts, header, footer and button or something like that</p>
+            <br><br>
+<!--            <p>For additional information please check this section in your IDE</p>-->
+
+            <p>If you want to learn how to use same layout in every page please check <span class="font-semibold text-dark">layout.html</span> file and check again this <span class="font-semibold text-dark">index.html</span> file</p>
+            <br>
+            <p>If you want to learn how to use components with variables please check items in <span class="font-semibold text-dark">views/block/components</span> folder</p>
+            <span class="block mt-[2px]">This is how to use a component with variables.</span><br>
+
+            {{> components/button
+                url = "about-us.html"
+                class = "primary-btn"
+                title = "butonnnnn"
+            }}
+        </div>
+
+        <div class="slider-area mb-[50px]">
+            <h2 class="text-[32px] text-dark mb-[15px]">Gallery Carousel Example</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://placehold.co/600x400/000000/FFF.jpg" alt="Slide Image"
+                             class="w-full h-[500px] object-cover object-center" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://placehold.co/700x500/000000/FFF.jpg" alt="Slide Image"
+                             class="w-full h-[500px] object-cover object-center" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://placehold.co/800x700/000000/FFF.jpg" alt="Slide Image"
+                             class="w-full h-[500px] object-cover object-center" loading="lazy">
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div class="slider-area mb-[50px]">
+            <h2 class="text-[32px] text-dark mb-[15px]">Gallery Carousel Example with FancyBox</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="block" aria-label="Slide Image">
+                            <img src="https://placehold.co/600x400/000000/FFF.jpg" alt="Slide Image"
+                                 data-src="https://placehold.co/600x400/000000/FFF.jpg"
+                                 data-fancybox="gallery"
+                                 class="w-full h-[500px] object-cover object-center" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="block" aria-label="Slide Image">
+                            <img src="https://placehold.co/700x500/000000/FFF.jpg" alt="Slide Image"
+                                 data-src="https://placehold.co/700x500/000000/FFF.jpg"
+                                 data-fancybox="gallery"
+                                 class="w-full h-[500px] object-cover object-center" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="block" aria-label="Slide Image">
+                            <img src="https://placehold.co/800x700/000000/FFF.jpg" alt="Slide Image"
+                                 data-src="https://placehold.co/800x700/000000/FFF.jpg"
+                                 data-fancybox="gallery"
+                                 class="w-full h-[500px] object-cover object-center" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div class="font-awesome mb-[50px]">
+            <h2 class="text-[32px] text-dark mb-[15px]">You can use Font Awesome Version: 6.4.2 Pro</h2>
+
+            <i class="fa-light fa-circle-user fa-3x"></i>
+            <i class="fa-light fa-money-bill fa-3x"></i>
+        </div>
+
+        <div class="mb-[50px]">
+            <h2 class="text-[32px] text-dark mb-[15px]">You can create and use <strong>multiple modals</strong></h2>
+            <p>Check this file in your IDE</p>
+
+            <div class="modal-trigger-button px-[15px] py-[10px] bg-amber-700 text-white w-max cursor-pointer" modal-trigger-id="1">Trigger Me!</div>
+            <br>
+            <div class="modal-trigger-button px-[15px] py-[10px] bg-amber-700 text-white w-max cursor-pointer" modal-trigger-id="2">Trigger Me Too!</div>
+
+            <div class="modal-container closed" data-keypress-close="true">
+                <div class="modal closed" modal-id="1">
+                    <div class="close-button">
+                        <i class="fa-light fa-xmark"></i>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-content">
+                            <p>This is first modal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal closed" modal-id="2">
+                    <div class="close-button">
+                        <i class="fa-light fa-xmark"></i>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-content">
+                            <p>This is second modal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-[250px]">
+            <h2 class="text-[32px] text-dark mb-[15px]">You can create and use <strong>multiple custom dropdowns</strong></h2>
+            <div class="dropdown">
+                <span>Yüzük Ölçüsü</span>
+                <div class="custom-dropdown" data-dropdown-id="1">
+                    <div class="placeholder">
+                        <span data-placeholder-id="1">12 (İade ve değişim yapılamaz)</span>
+                        <i class="fa-regular fa-angle-down"></i>
+                    </div>
+
+                    <div class="options" data-options-id="1">
+                        <div class="option">
+                            <span>12 (İade ve değişim yapılamaz)</span>
+                        </div>
+                        <div class="option">
+                            <span>13</span>
+                        </div>
+                        <div class="option">
+                            <span>14</span>
+                        </div>
+                        <div class="option">
+                            <span>15</span>
+                        </div>
+                        <div class="option">
+                            <span>16</span>
+                        </div>
+                    </div>
+                </div>
+<!--                Don"t delete this input if you are using dropdown in form.-->
+                <input type="text" value="" name="select-value">
+            </div>
+
+            <div class="dropdown px-[25px]">
+                <span>Yüzük Ölçüsü</span>
+                <div class="custom-dropdown" data-dropdown-id="2">
+                    <div class="placeholder">
+                        <span data-placeholder-id="2">12 (İade ve değişim yapılamaz)</span>
+                        <i class="fa-regular fa-angle-down"></i>
+                    </div>
+
+                    <div class="options" data-options-id="2">
+                        <div class="option">
+                            <span>12 (İade ve değişim yapılamaz)</span>
+                        </div>
+                        <div class="option">
+                            <span>13</span>
+                        </div>
+                        <div class="option">
+                            <span>14</span>
+                        </div>
+                        <div class="option">
+                            <span>15</span>
+                        </div>
+                        <div class="option">
+                            <span>16</span>
+                        </div>
+                    </div>
+                </div>
+                <!--                Don"t delete this input if you are using dropdown in form.-->
+                <input type="text" value="" name="select-value">
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer }}
+
+{{/layout}}

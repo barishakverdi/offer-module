@@ -1,0 +1,8 @@
+body {
+    @apply relative overflow-x-hidden;
+
+    &:after, &:before {
+        @apply
+        transition-all ease-in-out duration-700;
+    }
+}

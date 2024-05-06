@@ -1,0 +1,159 @@
+/* Define a transition duration during page visits */
+html.is-changing .transition-fade {   transition: opacity 0.1s;   opacity: 1; }
+/* Define the styles for the unloaded pages */
+html.is-animating .transition-fade {   opacity: 0; }
+
+#header {
+    @apply
+    w-full relative z-50 h-[90px] top-0
+    transition-all ease-in-out duration-300;
+
+    .header-body {
+        @apply
+        h-full
+        relative;
+
+        .header-container {
+            @apply
+            container mx-auto px-5
+            h-full
+            flex;
+
+            .header-row {
+                @apply
+                flex flex-grow-1 justify-between
+                h-full;
+
+                .header-column {
+                    @apply
+                    flex-grow-1
+                    h-full;
+
+                    .header-logo {
+                        @apply
+                        flex items-center
+                        relative
+                        h-full;
+
+                        a {
+                            @apply
+                            block w-full h-max;
+                        }
+
+                        img {
+                            @apply
+                            w-[196px]  h-auto
+                            transition-all ease-in-out duration-300;
+
+                            &:nth-child(2) {
+                                @apply
+                                w-0 hidden;
+                            }
+                        }
+                    }
+
+                    .header-nav {
+                        @apply
+                        h-full;
+                    }
+
+                    .features {
+                        @apply
+                        w-full h-full
+                        flex items-center justify-end
+                    }
+                }
+            }
+        }
+
+        .mover {
+            @apply
+            w-full
+            pointer-events-none
+            absolute left-0 top-0 -z-1
+            transition-all ease-in-out duration-700;
+        }
+    }
+
+    .menu-btn {
+        @apply
+        hidden lg:flex
+        flex-col items-end gap-[4px]
+        cursor-pointer
+        w-max;
+
+        span {
+            @apply
+            block
+            w-[15px] h-[1px]
+            bg-white;
+
+            &:nth-child(2) {
+                @apply
+                w-[11px];
+            }
+        }
+    }
+}
+
+html.sticky-active {
+    #header {
+        @apply
+        fixed h-[80px]
+        transition-all ease-in-out duration-300;
+
+        .header-body {
+            @apply
+            transition-all ease-in-out duration-300
+            bg-white;
+
+            .header-container {
+                .header-row {
+                    .header-column {
+                        .header-logo {
+                            img {
+                                @apply
+                                hidden transition-all ease-in-out duration-300;
+
+                                &:nth-child(2) {
+                                    @apply
+                                    block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mover {
+                @apply
+                bg-white;
+            }
+
+            .menu-btn {
+                span {
+                    @apply
+                    bg-dark;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &:after {
+        @apply
+        content-['']
+        absolute top-0 left-0
+        w-full h-0
+        bg-white/[.2] backdrop-blur-[20px]
+        pointer-events-none
+        transition-all ease-in-out duration-700;
+    }
+
+    &.dropdown-active {
+        &:after {
+            @apply z-40
+        }
+    }
+}

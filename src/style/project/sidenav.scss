@@ -1,0 +1,99 @@
+.sidenav {
+    @apply
+    hidden lg:block
+    fixed right-0 top-0
+    translate-x-[280px]
+    w-[280px] h-screen p-[30px]
+    bg-white
+    border border-transparent
+    transition-all ease-in-out duration-700;
+
+    .sidenav-wrapper {
+
+        .close-button {
+            @apply
+            flex items-center justify-center
+            w-[30px] h-[30px]
+            float-right
+            cursor-pointer
+            relative;
+
+            span {
+                @apply
+                absolute
+                w-[17px] h-[2px]
+                rounded-[6px]
+                block bg-dark;
+
+                &:nth-child(1) {
+                    @apply
+                    rotate-45;
+                }
+
+                &:nth-child(2) {
+                    @apply
+                    -rotate-45;
+                }
+            }
+        }
+
+        nav {
+            @apply
+            w-full;
+
+            > ul {
+                > .menu-item {
+                    @apply
+                    block;
+
+                   > a {
+                        @apply
+                        inline-block
+                        text-[16px] text-dark
+                        py-[15px];
+                    }
+
+                    > .sub-menu {
+                        @apply
+                        opacity-0
+                        h-0
+                            pointer-events-none
+                        pl-[10px]
+                        transition-all ease-in-out duration-300;
+
+                        &.sub-menu-open {
+                            @apply
+                            opacity-100
+                            h-full
+                            pointer-events-auto
+                            transition-all ease-in-out duration-300;
+                        }
+
+                        .menu-item {
+                            @apply
+                            block;
+
+                            a {
+                                @apply
+                                inline-block
+                                text-[16px] text-dark
+                                py-[15px];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        @apply
+        border-dark/[.1]
+        translate-x-0;
+
+        ~ * {
+            @apply
+            translate-x-[-280px];
+        }
+    }
+}

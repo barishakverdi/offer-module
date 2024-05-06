@@ -1,0 +1,58 @@
+{{#> layout }}
+
+    {{> partials/header }}
+    {{> components/breadcrumb }}
+    <div class="contact">
+        <form action=""  novalidate id="contact-form">
+            <div class="form-group">
+                <label>Name, Surname</label>
+                <input type="text" name="name" required placeholder="Name" minlength="3">
+            </div>
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" required placeholder="Username">
+            </div>
+
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" name="email" required placeholder="E-Mail">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="current-password" required placeholder="Password" autocomplete>
+            </div>
+
+            <div class="form-group">
+                <label>Github</label>
+                <input type="url" name="github_url" required placeholder="URL">
+            </div>
+
+            <div class="form-group">
+                <label>Information</label>
+                <select name="info" required>
+                    <option value="">Choose</option>
+                    <option value="1">Barış</option>
+                    <option value="2">Dolor</option>
+                    <option value="3">Sit</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>About Your</label>
+                <textarea name="about" rows="10" placeholder="Give some information" required></textarea>
+            </div>
+
+            <div class="form-group checkbox">
+                <p class="order-2">I read <a href="#">GDPR</a> and accept.</p>
+                <input type="checkbox" name="gdpr" required class="order-1">
+            </div>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+    {{> partials/footer }}
+
+
+{{/layout}}
