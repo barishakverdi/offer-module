@@ -1,0 +1,145 @@
+{{#> layout }}
+
+    {{> partials/header }}
+    <img src="https://placehold.co/1920x600/000000/FFF.jpg" alt="Banner Image" class="w-full h-auto mt-[-90px]" width="1920" height="600">
+    <div id="offer-v1" class="content-container max-w-[1320px] mx-auto px-5 mt-[120px]">
+
+        <div class="components mb-[50px]">
+            <h1 class="mb-[30px]">Offer Modal v1</h1>
+
+            <div id="get-offer-button" class="px-[25px] py-[15px] bg-primary text-[18px] leading-normal text-white w-max cursor-pointer min-lg:hover:bg-green-700 transition-all duration-500">
+                Teklif Al
+            </div>
+
+            <div id="offer-container" class="offer-container group/container w-screen h-screen fixed top-0 left-0 z-[100] transition-all duration-300 delay-300 opacity-0 pointer-events-none [&.active]:opacity-100 [&.active]:pointer-events-auto [&.active]:duration-500 [&.active]:delay-0">
+                <form action="#" method="get" class="w-full h-full">
+                    <div class="inner flex flex-grow w-full h-full bg-dark/80 py-[100px] xl:py-[50px]">
+                        <div class="wrapper w-full max-w-[1152px] h-full mx-auto bg-white py-[50px] xl:py-[25px] px-[60px] xl:px-[30px] rounded-2xl flex flex-col translate-y-[calc(100%+100px)] transition-all duration-300 group-[&.active]/container:translate-y-0 group-[&.active]/container:duration-500">
+                            <div class="head flex items-center justify-between gap-[10px] w-full mb-[50px] lg:mb-[24px]">
+                                <p class="text-[24px] leading-normal text-black tracking-tight">Teklif Al</p>
+                                <div data-offer-close class="cursor-pointer w-[40px] aspect-square grid place-items-center">
+                                    <i class="fa-light fa-xmark text-dark/50 fa-2xl"></i>
+                                </div>
+                            </div>
+<!--                            overflow-x-auto scroll-smooth [scroll-snap-type:x_mandatory] [&.no-scroll]:overflow-hidden-->
+                            <div class="steps-container h-full overflow-y-hidden overflow-x-hidden">
+<!--                                gap-[60px]-->
+                                <div class="steps-wrapper flex gap-[60px] duration-700">
+                                    <div data-step="0" class="group/step block flex-shrink-0 w-full [scroll-snap-align:start] pointer-events-none [&.active]:relative [&.active]:pointer-events-auto">
+                                        <p class="text-[20px] leading-normal text-dark/50 tracking-tighter mb-[24px]">Aşağıdaki seçenekler tekli seçimdir ve daha sonrasında diğer adıma geçilmelidir.</p>
+                                        <div class="content w-full h-full px-[5px]">
+                                            <div data-step-items data-selection="single" class="grid grid-cols-2 gap-[24px]">
+                                                {{> components/step-1-item
+                                                title="Seçenek 1"
+                                                }}
+                                                {{> components/step-1-item
+                                                title="Seçenek 2"
+                                                }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-step="1" class="group/step block flex-shrink-0 w-full [scroll-snap-align:start] pointer-events-none [&.active]:relative [&.active]:pointer-events-auto">
+                                        <p class="text-[20px] leading-normal text-dark/50 tracking-tighter mb-[24px]">Aşağıdaki seçenekler çoklu seçimdir ve daha sonrasında diğer adıma geçilmelidir.</p>
+                                        <div class="content w-full h-full px-[5px]">
+                                            <div data-step-items data-selection="multiple" class="grid grid-cols-2 gap-[24px]">
+                                                {{> components/step-2-item
+                                                title="Seçenek 1"
+                                                }}
+                                                {{> components/step-2-item
+                                                title="Seçenek 2"
+                                                }}
+                                                {{> components/step-2-item
+                                                title="Seçenek 3"
+                                                }}
+                                                {{> components/step-2-item
+                                                title="Seçenek 4"
+                                                }}
+                                                {{> components/step-2-item
+                                                title="Seçenek 5"
+                                                }}
+                                                {{> components/step-2-item
+                                                title="Seçenek 6"
+                                                }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-step="2" class="group/step block flex-shrink-0 w-full overflow-auto [scroll-snap-align:start] pointer-events-none [&.active]:relative [&.active]:pointer-events-auto">
+                                        <p class="text-[20px] leading-normal text-dark/50 tracking-tighter mb-[24px]">Aşağıdaki seçenekler çoklu seçimdir ve daha sonrasında diğer adıma geçilmelidir.</p>
+                                        <div class="content w-full h-full px-[5px]">
+                                            <div data-step-items data-selection="multiple" class="grid grid-cols-4 gap-[24px]">
+                                                {{> components/step-3-item
+                                                title="Seçenek 1"
+                                                }}
+                                                {{> components/step-3-item
+                                                title="Seçenek 2"
+                                                }}
+                                                {{> components/step-3-item
+                                                title="Seçenek 3"
+                                                }}
+                                                {{> components/step-3-item
+                                                title="Seçenek 4"
+                                                }}
+                                                {{> components/step-3-item
+                                                title="Seçenek 5"
+                                                }}
+                                                {{> components/step-3-item
+                                                title="Seçenek 6"
+                                                }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-step="3" class="group/step block flex-shrink-0 w-full [scroll-snap-align:start] pointer-events-none [&.active]:relative [&.active]:pointer-events-auto">
+                                        <p class="text-[20px] leading-normal text-dark/50 tracking-tighter mb-[24px]">Teklifi size iletebilmek ve detayları konuşabilmek adına lütfen aşağıdaki formu doldurunuz.</p>
+                                        <div class="content w-full h-full px-[5px]">
+                                            <div class="grid grid-cols-2 gap-[24px] h-max">
+                                                <div class="form-group">
+                                                    <label>Ad, Soyad</label>
+                                                    <input type="text" name="name" placeholder="Barış Hakverdi">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Telefon</label>
+                                                    <input type="text" name="name" placeholder="Örn: 5XX XXX XX XX">
+                                                </div>
+                                                <div class="form-group col-span-2">
+                                                    <label>E-Posta</label>
+                                                    <input type="email" name="email" placeholder="ornek@domain.com">
+                                                </div>
+                                                <div class="form-group col-span-2 flex !flex-row justify-between">
+                                                    <div class="flex items-center gap-[10px]">
+                                                        <input type="checkbox" name="gdpr" id="gdpr" required class="">
+                                                        <label for="gdpr" class="text-[14px] leading-normal text-dark/50">I read <a href="#" class="text-dark">GDPR</a> and accept.</label>
+                                                    </div>
+                                                    <button type="submit" class="px-[25px] py-[15px]">Gönder</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom flex items justify-between gap-[10px]">
+                                <div class="flex items-center">
+                                    <div data-prev-step class="inline-flex items-center gap-2 cursor-pointer border-0 !border-b border-b-primary text-[16px] text-primary tracking-tight mr-[30px] [&.disabled]:hidden">
+                                        <i class="fa-light fa-arrow-left text-primary text-[16px]"></i>
+                                        Önceki Adım
+                                    </div>
+                                    <p class="text-[16px] leading-normal text-dark/50 mr-[5px]">Adım:</p>
+                                    <div class="flex items-center">
+                                        <span data-current-step class="text-[18px] leading-normal text-primary font-semibold"></span>
+                                        <span class="text-[16px] leading-normal text-dark/50">/</span>
+                                        <span data-total-steps class="text-[16px] leading-normal text-dark/50"></span>
+                                    </div>
+                                </div>
+                                <div data-next-step class="px-[25px] py-[15px] bg-primary text-[18px] leading-normal text-white w-max cursor-pointer min-lg:hover:[&:not(.disabled)]:bg-green-700 transition-all duration-500 [&.disabled]:opacity-50 [&.disabled]:cursor-not-allowed [&.disabled]:pointer-events-none [&.disabled]:scale-90">
+                                    Sonraki Adım
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{> partials/footer }}
+
+{{/layout}}
