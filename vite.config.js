@@ -16,8 +16,8 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'src/index.html'),
                 nested: resolve(__dirname, 'src/views/index.html'),
-                aboutUs: resolve(__dirname, 'src/views/about-us.html'),
-                contact: resolve(__dirname, 'src/views/contact.html'),
+                offerV1: resolve(__dirname, 'src/views/offer-v1.html'),
+                offerV2: resolve(__dirname, 'src/views/offer-v2.html'),
             },
         },
     },
